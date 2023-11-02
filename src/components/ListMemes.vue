@@ -5,9 +5,9 @@
   <div class="total-show">
     <select class="form-select" @change="changeTotalShow">
         <option value="" selected>Todos</option>
-        <option value="5">ver 5 memes</option>
-        <option value="25">ver 25 memes</option>
-        <option value="50">ver 50 memes</option>
+        <option value="5">5 memes</option>
+        <option value="25">25 memes</option>
+        <option value="50">50 memes</option>
     </select>
   </div>
   <div class="row">
@@ -35,7 +35,9 @@ export default {
         });
 
         const changeTotalShow = (e) => {
-            console.log(e.target.value);
+            store.dispatch("getMemes", {
+                total: e.target.value,
+            })
         };
 
         return {
